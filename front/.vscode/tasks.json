@@ -2,9 +2,27 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Start dev server",
+      "label": "yarn start",
       "type": "shell",
       "command": "yarn start",
+      "isBackground": true,
+      "problemMatcher": [
+        {
+          "pattern": [
+            {
+              "regexp": ".",
+              "file": 1,
+              "line": 1,
+              "message": 1
+            }
+          ],
+          "background": {
+            "activeOnStart": true,
+            "beginsPattern": "^Starting.*$",
+            "endsPattern": "^Compiled.*$"
+          }
+        }
+      ],
       "options": {
         "env": {
           "BROWSER": "none"
